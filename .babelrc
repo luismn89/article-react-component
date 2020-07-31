@@ -1,0 +1,14 @@
+{
+  "presets": ["@babel/env"],
+  "plugins": [
+    [
+      "babel-plugin-root-import",
+      {
+        "rootPathSuffix": "./",
+        "rootPathPrefix": "~"
+      }
+    ],
+    "@babel/plugin-proposal-export-namespace-from",
+    "@babel/plugin-proposal-class-properties"
+  ]
+}
