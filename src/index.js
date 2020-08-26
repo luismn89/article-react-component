@@ -1,14 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import ArticlePreview from "./components/ArticlePreview";
+import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ArticlePreview />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("article-preview-react")
 );
 
 // If you want your app to work offline and load faster, you can change
