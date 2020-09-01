@@ -24,6 +24,13 @@ const Article = styled.article`
   display: flex;
   flex-direction: column;
 
+  @media (min-width: 640px) and (max-width: 940px) {
+    flex-basis: 48%;
+    &:nth-child(odd) {
+      margin-right: 15px;
+    }
+  }
+
   @media (min-width: 940px) {
     flex-direction: row;
     max-width: 700px;
@@ -43,7 +50,7 @@ const DetailArticle = styled.div`
     line-height: 1.5;
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: 940px) {
     padding: 30px;
     h2 {
       font-size: 18px;
@@ -67,23 +74,24 @@ const ImgPost = styled.img`
   }
 `;
 
-const ArticlePreview = () => {
+const ArticlePreview = ({
+  id,
+  author,
+  published,
+  description,
+  title,
+  url,
+  image,
+}) => {
   const [shareActive, setShareActive] = useState(false);
 
   return (
     <Article>
-      <ImgPost src={ImagePost} alt="Imagen de post" />
+      <ImgPost src={image === "None" ? ImagePost : image} alt={title} />
       <DetailArticle>
-        <h2>
-          Shift the overall look and feel by adding these wonderful touches to
-          furniture in your home
-        </h2>
-        <p>
-          Ever been in a room and felt like something was missing? Perhaps it
-          felt slightly bare and uninviting. I've got some simple tips to help
-          you make any room feel complete.
-        </p>
-        <AuthorDetail {...{ shareActive, setShareActive }} />
+        <h2>{title}</h2>
+        <p>{description}</p>
+        <AuthorDetail {...{ shareActive, setShareActive, author, published }} />
       </DetailArticle>
       <SharePopup {...{ shareActive }} />
     </Article>

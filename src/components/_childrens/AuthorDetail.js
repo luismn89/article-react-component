@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ImageAuthor from "../../images/avatar-michelle.jpg";
 
-const AuthorDetail = ({ shareActive, setShareActive }) => {
+const AuthorDetail = ({ shareActive, setShareActive, author, published }) => {
   /* Component Styles */
   const colors = {
     veryDarkGrayishBlue: "#48556a",
@@ -54,8 +54,8 @@ const AuthorDetail = ({ shareActive, setShareActive }) => {
     <AuthorBlock>
       <ImgAuthor src={ImageAuthor} alt="Author" />
       <AuthorDescription>
-        <p>Michelle Appleton</p>
-        <p>01 Ago 2020</p>
+        <p>{author}</p>
+        <p>{published}</p>
       </AuthorDescription>
       <ShareButton onClick={() => setShareActive(!shareActive)}>
         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13">
